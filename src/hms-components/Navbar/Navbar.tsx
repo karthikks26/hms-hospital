@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Activity } from "lucide-react";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -17,13 +18,16 @@ const Navbar = () => {
       </div>
       <div className="absolute top-4 right-6">
         <DropdownMenu>
-          <DropdownMenuTrigger>SignUp/SignIn</DropdownMenuTrigger>
+          <DropdownMenuTrigger>SignUp/LogIn</DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuLabel>Who are you?</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Doctor</DropdownMenuItem>
             <DropdownMenuItem>Patient</DropdownMenuItem>
-            <DropdownMenuItem>Admin</DropdownMenuItem>
+            <Link href="/admin/login">
+              {" "}
+              <DropdownMenuItem>Admin</DropdownMenuItem>
+            </Link>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
